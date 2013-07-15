@@ -52,3 +52,10 @@ of the terminating line.
 
 Simplify only after the function is correct.
 
+### The Seventh Commandment
+
+Recur on the _subparts_ that are of the same nature:
+
+* On the sublists of a list.
+* On the subexpressions of an arithmetic expression.
+
