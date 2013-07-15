@@ -59,3 +59,6 @@ Recur on the _subparts_ that are of the same nature:
 * On the sublists of a list.
 * On the subexpressions of an arithmetic expression.
 
+### The Eight Commandment
+
+Use help functions to abstract from representations.
