@@ -59,6 +59,15 @@ Recur on the _subparts_ that are of the same nature:
 * On the sublists of a list.
 * On the subexpressions of an arithmetic expression.
 
-### The Eight Commandment
+### The Eighth Commandment
 
 Use help functions to abstract from representations.
+
+### The Ninth Commandment
+
+Abstract common patterns with a new function.
+
+### The Tenth Commandment
+
+Build functions to collect more than one value at a time.
+
