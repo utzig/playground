@@ -51,3 +51,32 @@
       ((null? set1) set2)
       ((member? (car set1) set2) (union (cdr set1) set2))
       (else (cons (car set1) (union (cdr set1) set2))))))
+
+(define intersectall
+  (lambda (l-set)
+    ((null? (cdr l-set)) (car l-set))
+    (else (intersect (car l-set) (intersectall (cdr l-set))))))
+
+(define a-pair?
+  (lambda (l)
+    ((null? l) #f)
+    ((null? (cdr l)) #f)
+    ((null? (cdr (cdr l))) #t)
+    (else #f)))
+
+(define first (lambda (l) (car l)))
+(define second (lambda (l) (car (cdr l))))
+(define third (lambda (l) (car (cdr (cdr l)))))
+(define build (lambda (s1 s2) (cons s1 (cons s2 '()))))
+
+; (include "ch3.scm")
+
+(define fun? (lambda (rel) (set? (firsts rel))))
+
+(define revrel
+  (lambda (rel)
+    (cond
+      ((null? rel) '())
+      (else (cons
+        (build (second (car rel)) (first (car rel)))
+          (revrel (cdr rel)))))))
