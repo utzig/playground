@@ -92,3 +92,38 @@
         (multiinsertLR&co new oldL oldR (cdr lat)
           (lambda (newlat L R)
             (col (cons (car lat) newlat)) L R))))))
+
+; even? already available in chicken scheme (at least)
+;(define even?
+;  (lambda (n)
+;    (= (* (/ n 2) 2) n)))
+
+(define evens-only*&co
+  (lambda (l col)
+    (cond
+      ((null? l) (col '() 1 0))
+      ((atom? (car l))
+        (cond
+          ((even? (car l))
+            (evens-only*&co (cdr l)
+              (lambda (newl p s)
+                (col (cons (car l) newl)
+                  (* (car l) p) s))))
+          (else
+            (evens-only*&co (cdr l)
+              (lambda (newl p s)
+                (col newl p (+ (car l) s)))))))
+      (else
+        (evens-only*&co (car l)
+          (lambda (al ap as)
+            (evens-only*&co (cdr l)
+              (lambda (dl dp ds)
+                (col (cons al dl) (* ap dp) (+ as ds))))))))))
+
+(define the-last-friend
+  (lambda (newl product sum)
+    (cons sum (cons product newl))))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;  Is your brain twisted now???  ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
