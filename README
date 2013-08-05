@@ -1,3 +1,10 @@
 Name: circuit_design_with_vhdl
 Description: Exercises from the book Circuit Design with VHDL
 by Volnei Pedroni
+
+Name: the_little_schemer
+Description: Exercises from the book The Little Schemer by
+Daniel P. Friedman
+
+Name: go_tour
+Description: Exercises from the tour of go: http://tour.golang.org/
