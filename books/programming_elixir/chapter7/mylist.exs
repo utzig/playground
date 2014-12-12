@@ -11,4 +11,12 @@ defmodule MyList do
   defp _max([], value), do: value
   defp _max([h|t], value) when h > value, do: _max(t, h)
   defp _max([_h|t], value), do: _max(t, value)
+
+  # caesar cypher!
+  def caesar(list, n), do: _caesar(list, n)
+
+  # TODO: find out how to use 'a', 'z' instead of 97, 122!
+  defp _caesar([], _n), do: []
+  defp _caesar([h|t], n) when (122 - h) > n, do: [(h + n) | _caesar(t, n)]
+  defp _caesar([h|t], n), do: [((n - (122 - h) - 1) + 97) | _caesar(t, n)]
 end
