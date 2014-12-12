@@ -19,4 +19,7 @@ defmodule MyList do
   defp _caesar([], _n), do: []
   defp _caesar([h|t], n) when (122 - h) > n, do: [(h + n) | _caesar(t, n)]
   defp _caesar([h|t], n), do: [((n - (122 - h) - 1) + 97) | _caesar(t, n)]
+
+  def span(from, to) when from > to, do: []
+  def span(from, to), do: [ from | span(from + 1, to) ]
 end
