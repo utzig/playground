@@ -4,4 +4,11 @@ defmodule MyList do
 
   def mapsum([], _func), do: 0
   def mapsum([h|t], func), do: func.(h) + mapsum(t, func)
+
+  # returns max element in a list
+  def max([h|t]), do: _max(t, h)
+
+  defp _max([], value), do: value
+  defp _max([h|t], value) when h > value, do: _max(t, h)
+  defp _max([_h|t], value), do: _max(t, value)
 end
