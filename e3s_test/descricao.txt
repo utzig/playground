@@ -1,0 +1,12 @@
+1) Develop a command-line or GUI program that splits an input image in the
+   3 RGB channels, generating 3 new images and displaying them (if a GUI application). 
+
+2) Expand the same program to apply a Blur filter into the input image (each pixel
+   in the target image is obtained by the average of all the pixels surrounding it,
+   including itself);
+
+3) Expand the Blur algorithm to receive two parameters: neighbor level (how many
+   neighbors should be taken; level 1 is the basic blur, where each pixel surrounding
+   the central pixel is taking in account, a square of 8 pixels; level 2 means that
+   the square has size 5, 2 pixels at each side of the central one, 24 pixels) and
+   central pixel weight, making a weighted average instead of a simple average.
