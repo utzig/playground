@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 with open("day2.txt") as f:
     lines = f.readlines()
 
